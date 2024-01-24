@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'a_LCDNova';
+    src: url('../fonts/a_lcdnova_[allfont.ru].ttf');
+}
+
+body {
+    background: url('../img/city.jpg') center/cover no-repeat fixed;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.wrapper {
+    width: 800px;
+    height: 500px;
+    perspective: 1000px;
+}
+
+.wrapper-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: .9s;
+    transform-style: preserve-3d;
+}
+
+.flip-block-front,
+.flip-block-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.flip-block-front {
+    background: url('../img/Circle-Triangle-Sqaure-black.png') center/contain no-repeat, url('../img/paper.jpg');
+}
+
+.flip-block-back {
+    background: url('../img/paper.jpg');
+    transform: rotateY(180deg);
+}
+
+#start {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translate(-50%);
+    font-size: 2em;
+    color: black;
+    cursor: pointer;
+}
+
+h1 {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%);
+    font-family: 'a_LCDNova';
+    font-size: 2em;
+}
+
+#countdown {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translate(-50%);
+    font-family: 'a_LCDNova';
+    font-size: 1.5em;
+}
+
+#answer {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translate(-50%);
+    font-family: 'IM Fell DW Pica', serif;
+    font-size: 2em;
+    color: black;
+    cursor: pointer;
+}
+
+.table {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 5px;
+    width: 265px;
+    height: 265px;
+    padding: 5px;
+    border: 2px solid rgb(51, 81, 82);
+    border-radius: 3px;
+
+}
+
+.chip {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    font-family: 'a_LCDNova';
+    font-size: 2em;
+    color: black;
+    border: 1px solid rgb(51, 81, 82);
+    border-radius: 3px;
+    background-color: burlywood;
+    cursor: pointer;
+}
